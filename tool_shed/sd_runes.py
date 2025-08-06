@@ -169,6 +169,44 @@ QUALITY_PROMPT_LIST = [
     },
 ]
 
+NOVA_PONY_PREFIX = ['score_9', 'score_8_up', 'score_7_up', 'score_6_up', 'score_5_up', 'score_4_up', 'source_anime', 'BREAK']
+NOVA_ILLUS_PREFIX = ['masterpiece', 'best quality', 'amazing quality', 'very aesthetic', 'high resolution', 'ultra-detailed', 'absurdres', 'newest', 'scenery']
+PONY_PREFIX = ['score_9', 'score_8_up', 'score_7_up', 'BREAK']
+PONY_NEGATIVE_PREFIX = ['score_4', 'score_5', 'score_6', 'score_1', 'score_2', 'score_3']
+PONY_ANIME_PREFIX = ['source_anime']
+PONY_NEGATIVE_REALISM_AND_ANIME = ['source_pony', 'source_furry', 'source_cartoon']
+
+AVAILABLE_PREFIX_LIST = [
+    {
+        "name": "Pony Common",
+        "prompt": PONY_PREFIX,
+        "negative_prompt": PONY_NEGATIVE_PREFIX,
+        "var_negative_prompt": -3,
+    },
+    {
+        "name": "Pony Anime Common",
+        "prompt": PONY_ANIME_PREFIX + PONY_PREFIX,
+        "negative_prompt": PONY_NEGATIVE_REALISM_AND_ANIME + PONY_NEGATIVE_PREFIX,
+        "var_negative_prompt": -3,
+    },
+    {
+        "name": "Pony Realism Common",
+        "prompt": PONY_PREFIX,
+        "negative_prompt": PONY_NEGATIVE_REALISM_AND_ANIME + PONY_NEGATIVE_PREFIX,
+        "var_negative_prompt": -3,
+    },
+    {
+        "name": "Nova Pony Common",
+        "prompt": NOVA_PONY_PREFIX,
+        "negative_prompt": [],
+    },
+    {
+        "name": "Nova Illustrious Common",
+        "prompt": NOVA_ILLUS_PREFIX,
+        "negative_prompt": [],
+    },
+]
+
 all_original_resolutions = [
     # SDXL
     [1152, 896], [1216, 832], [1344, 768], [1536, 640], [1792, 512],
